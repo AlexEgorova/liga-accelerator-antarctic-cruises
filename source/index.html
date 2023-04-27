@@ -14,38 +14,37 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
+      <header class="header">
         <div class="container">
-          <div>
-            <nav>
-              <a href="#">
-                <img src="#" alt="Логотип компании">
+          <div class="header__wrapper">
+            <nav class="header__nav">
+              <a class="header__logo" href="index.html" aria-label="Переход на главную страницу">
+                <svg width="70" height="38" aria-hidden="true" focusable="false">
+                  <use  xlink:href="./img/sprite.svg#logo"></use>
+                </svg>
               </a>
-              <button>
+              <button class="header__burger btn">
                 <span class="visually-hidden">Открыть/Закрыть меню</span>
               </button>
               <ul>
                 <li>
-                  <a href="#">Преимущества</a>
+                  <a href="#advantages">Преимущества</a>
                 </li>
                 <li>
                   <a href="#">Направления</a>
                 </li>
                 <li>
-                  <a href="#">Ближайшие круизы</a>
+                  <a href="#catalog ">Ближайшие круизы</a>
                 </li>
                 <li>
-                  <a href="#">Контакты</a>
+                  <a href="#contacts">Контакты</a>
                 </li>
               </ul>
             </nav>
-          </div>
-          <div>
-            <h1>Круизы в&nbsp;Антарктику </h1>
-            <p>Волшебный мир айсбергов и&nbsp;пингвинов</p>
-            <picture>
-              <img src="#" alt="Панаромное фото заснеженной земли">
-            </picture>
+            <div class="header__content">
+              <h1>Круизы в&nbsp;Антарктику</h1>
+              <p>Волшебный мир айсбергов&nbsp;и&nbsp;пингвинов</p>
+            </div>
           </div>
         </div>
       </header>
@@ -59,7 +58,7 @@
             </picture>
           </div>
         </section>
-        <section class="advantages">
+        <section class="advantages" id="advantages">
           <div class="container">
             <h2>Преимущества</h2>
             <ul>
@@ -78,7 +77,7 @@
             </ul>
           </div>
         </section>
-        <section class="catalog">
+        <section class="catalog" id="catalog">
           <div class="container">
             <h2>Ближайшие круизы</h2>
             <ul>
@@ -239,7 +238,7 @@
             </form>
           </div>
         </section>
-        <section class="contacts">
+        <section class="contacts" id="contacts">
           <div class="container">
             <h2 class="visually-hidden">Контакты</h2>
             <iframe src="" frameborder="0"></iframe>

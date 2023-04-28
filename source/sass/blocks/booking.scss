@@ -1,0 +1,115 @@
+.booking {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: $color-tangaroa;
+  background-color: $color-alice-blue;
+  background-image: image-set(
+    url("../../img/bg-img/bg-booking-desk.jpg") 1x,
+    url("../../img/bg-img/bg-booking-desk@2x.jpg") 2x
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  // box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  @include retina {
+    background-image: image-set(
+      url("../../img/bg-img/bg-booking-desk.webp") 1x,
+      url("../../img/bg-img/bg-booking-desk@2x.webp") 2x
+    );
+  }
+
+  @include vp-1023 {
+    background-image: image-set(
+      url("../../img/bg-img/bg-booking-tabl.jpg") 1x,
+      url("../../img/bg-img/bg-booking-tabl@2x.jpg") 2x
+    );
+
+    @include retina {
+      background-image: image-set(
+        url("../../img/bg-img/bg-booking-tabl.webp") 1x,
+        url("../../img/bg-img/bg-booking-tabl@2x.webp") 2x
+      );
+    }
+  }
+
+  @include vp-767 {
+    background-image: image-set(
+      url("../../img/bg-img/bg-booking-mob.jpg") 1x,
+      url("../../img/bg-img/bg-booking-mob@2x.jpg") 2x
+    );
+
+    @include retina {
+      background-image: image-set(
+        url("../../img/bg-img/bg-booking-mob.webp") 1x,
+        url("../../img/bg-img/bg-booking-mob@2x.webp") 2x
+      );
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 150%;
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include vp-1023 {
+      font-size: 34px;
+    }
+
+    @include vp-767 {
+      font-size: 24px;
+      line-height: 130%;
+      margin-bottom: 30px;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    margin: 0;
+    max-width: 352px;
+
+    @include vp-767 {
+      font-size: $fz-default;
+      line-height: 140%;
+      max-width: 257px;
+    }
+  }
+}
+
+.booking__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 403px;
+  padding: 50px 45px;
+  align-items: center;
+  min-height: 555px;
+
+  @include vp-1023 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.booking__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 403px;
+  color: $color-alice-blue;
+  background-color: $color-tangaroa;
+  padding: 50px;
+
+  h3 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  @include vp-767 {
+    min-width: 290px;
+  }
+}

@@ -1,0 +1,68 @@
+.intro {
+  color: $color-tangaroa;
+  line-height: 150%;
+
+
+  h2 {
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0;
+    margin-bottom: 32px;
+
+    @include vp-1023 {
+      font-size: 26px;
+      line-height: 140%;
+      margin-bottom: 18px;
+    }
+
+    @include vp-767 {
+      font-size: 24px;
+
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: $fz-default;
+    margin: 0;
+  }
+
+  img {
+    @include vp-1023 {
+      margin-top: 10px;
+    }
+  }
+}
+
+.intro__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+  padding: 120px 0 145px;
+  align-items: center;
+
+  @include vp-1023 {
+    column-gap: 30px;
+    padding: 90px 0;
+    align-items: flex-start;
+  }
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+    padding: 58px 0 85px;
+  }
+}
+
+.intro__content {
+  min-width: 512px;
+
+  @include vp-1023 {
+    min-width: 324px;
+  }
+
+  @include vp-767 {
+    min-width: 290px;
+    margin-bottom: 30px;
+  }
+}

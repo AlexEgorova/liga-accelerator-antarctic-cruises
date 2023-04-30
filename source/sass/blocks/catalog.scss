@@ -7,26 +7,6 @@
     margin: 0;
     margin-bottom: 60px;
   }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(4, 270px);
-    gap: 30px;
-
-    @include vp-1023 {
-      grid-template-columns: repeat(2, 309px);
-      gap: 30px;
-    }
-
-    @include vp-767 {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
-  }
 }
 
 .catalog__wrapper {
@@ -34,4 +14,25 @@
   flex-direction: column;
   align-items: center;
   padding: 95px 0 120px;
+}
+
+.catalog__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 260px);
+  gap: 30px;
+
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 }

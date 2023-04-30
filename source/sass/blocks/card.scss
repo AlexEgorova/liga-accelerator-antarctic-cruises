@@ -1,0 +1,55 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-decoration: none;
+  min-height: 386px;
+  margin: 0;
+  padding: 30px;
+  color: $color-alice-blue;
+  background: linear-gradient(180deg, rgba(1, 28, 64, 0) 50%, $color-tangaroa 100%);
+  background-image: url("../../img/catalog/card-astoria-desk.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+
+  h3 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  @include hover-focus {
+    background: $color-tangaroa;
+    box-shadow: 0 4px 35px $color-tangaroa-015;
+    align-items: flex-start;
+
+    .card__content {
+      display: flex;
+      flex-direction: column;
+      padding: 35px 25px;
+    }
+
+    a {
+      display: block;
+      min-width: 100%;
+      min-height: 40px;
+      padding: 14px;
+      background-color: $color-alice-blue;
+      color: $color-tangaroa;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 150%;
+
+      @include hover-focus {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.card__content {
+  display: none;
+}

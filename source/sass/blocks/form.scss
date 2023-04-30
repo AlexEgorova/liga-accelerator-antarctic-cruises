@@ -1,0 +1,153 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 403px;
+  min-height: 455px;
+  color: $color-alice-blue;
+  font-size: 12px;
+  background-color: $color-tangaroa;
+  padding: 45px 50px;
+  padding-bottom: 0;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 25px;
+
+    @include vp-767 {
+      line-height: 140%;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  @include vp-767 {
+    width: 290px;
+    padding: 35px 30px 40px;
+  }
+}
+
+.form input[type="text"],
+.form input[type="tel"],
+.form input[type="email"] {
+  width: 100%;
+  min-height: 43px;
+  border: none;
+  font-family: $ff-default;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  align-items: center;
+  background-color: $color-alice-blue;
+  color: $color-tangaroa;
+  padding: 11px 16px;
+
+  &::placeholder {
+    font-family: $ff-default;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $color-tangaroa-07;
+  }
+
+  @include hover-focus {
+    opacity: 0.9;
+  }
+}
+
+.form input[aria-invalid="true"] {
+  outline: 2px solid $color-torch-red;
+}
+
+.form button {
+  display: block;
+  width: 100%;
+  min-height: 43px;
+  padding: 10px;
+  background-color: $color-alice-blue;
+  color: $color-tangaroa;
+  border: none;
+  font-family: $ff-default;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  cursor: pointer;
+
+  @include hover-focus {
+    opacity: 0.5;
+  }
+
+  @include vp-1023 {
+    line-height: 130%;
+  }
+
+  @include vp-767 {
+    line-height: 120%;
+  }
+}
+
+.form__group {
+  margin-bottom: 20px;
+
+  @include vp-767 {
+    margin-bottom: 19px;
+  }
+}
+
+.form__group--agreement {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  grid-template-rows: auto;
+  column-gap: 5px;
+  align-items: center;
+  font-family: $ff-default;
+  font-weight: 400;
+  font-size: 9.8px;
+  line-height: 130%;
+  color: $color-alice-blue;
+  cursor: pointer;
+  margin-bottom: 33px;
+
+  & input {
+    appearance: none;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-color: $color-alice-blue;
+    cursor: pointer;
+
+    @include vp-767 {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  & input[type="checkbox"]:checked {
+    background-image: url("../../img/svg/icon-checked.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+  }
+
+  & label {
+    cursor: pointer;
+  }
+
+  @include hover {
+    opacity: 0.3;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 20px 1fr;
+    column-gap: 8px;
+    margin-bottom: 25px;
+  }
+}

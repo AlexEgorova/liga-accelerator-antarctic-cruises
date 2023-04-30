@@ -35,6 +35,7 @@
   }
 
   @include vp-767 {
+    padding-top: 60px;
     background-image: image-set(
       url("../../img/bg-img/bg-booking-mob.jpg") 1x,
       url("../../img/bg-img/bg-booking-mob@2x.jpg") 2x
@@ -53,16 +54,20 @@
     font-size: 40px;
     line-height: 150%;
     margin: 0;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 8px;
 
     @include vp-1023 {
       font-size: 34px;
+      margin-bottom: 5px;
     }
 
     @include vp-767 {
       font-size: 24px;
       line-height: 130%;
-      margin-bottom: 30px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      text-align: center;
     }
   }
 
@@ -73,10 +78,15 @@
     margin: 0;
     max-width: 352px;
 
+    @include vp-1023 {
+      margin: 0 auto;
+      text-align: center;
+    }
+
     @include vp-767 {
       font-size: $fz-default;
       line-height: 140%;
-      max-width: 257px;
+      max-width: 255px;
     }
   }
 }
@@ -84,32 +94,30 @@
 .booking__wrapper {
   display: grid;
   grid-template-columns: 1fr 403px;
-  padding: 50px 45px;
+  padding: 5px 60px 30px;
   align-items: center;
   min-height: 555px;
 
   @include vp-1023 {
     display: flex;
     flex-direction: column;
+    padding: 75px 128px 100px;
+  }
+
+  @include vp-767 {
+    padding: 0;
   }
 }
 
 .booking__form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 403px;
-  color: $color-alice-blue;
-  background-color: $color-tangaroa;
-  padding: 50px;
+  margin-top: 25px;
 
-  h3 {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 150%;
+  @include vp-1023 {
+    margin-top: 50px;
   }
 
   @include vp-767 {
-    min-width: 290px;
+    margin-top: 30px;
+    margin-bottom: 65px;
   }
 }

@@ -1,53 +1,124 @@
 .card {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
   text-decoration: none;
-  min-height: 386px;
+  min-width: 260px;
+  max-height: 386px;
   margin: 0;
-  padding: 30px;
   color: $color-alice-blue;
   background: linear-gradient(180deg, rgba(1, 28, 64, 0) 50%, $color-tangaroa 100%);
-  background-image: url("../../img/catalog/card-astoria-desk.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   cursor: pointer;
 
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
   h3 {
-    margin: 0;
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    margin-left: 5px;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
   }
 
   @include hover-focus {
+    display: block;
+    width: auto;
+    max-height: 386px;
+    justify-content: flex-start;
     background: $color-tangaroa;
     box-shadow: 0 4px 35px $color-tangaroa-015;
-    align-items: flex-start;
+
+    h3 {
+      display: none;
+    }
+
+    img {
+      display: none;
+    }
 
     .card__content {
       display: flex;
       flex-direction: column;
-      padding: 35px 25px;
+      justify-content: space-between;
+      padding: 25px;
+      padding-bottom: 35px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
 
-    a {
-      display: block;
+    p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    dl {
+      margin: 0;
+      margin-top: 8px;
+      padding: 0;
+      overflow-y: auto;
+    }
+
+    dt {
+      font-family: $ff-default;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    dd {
+      margin: 0;
+      margin-bottom: 15px;
+      font-family: $ff-default;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    button {
       min-width: 100%;
-      min-height: 40px;
-      padding: 14px;
+      min-height: fit-content;
+      padding: 8px 10px 6px;
       background-color: $color-alice-blue;
       color: $color-tangaroa;
       font-weight: 600;
       font-size: 14px;
       line-height: 150%;
+      text-align: center;
+      border: none;
 
       @include hover-focus {
         opacity: 0.5;
       }
     }
   }
+
+  @include vp-1023 {
+    min-width: 309px;
+  }
+
+  @include vp-767 {
+    min-width: 270px;
+  }
+}
+
+.card__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card__content {

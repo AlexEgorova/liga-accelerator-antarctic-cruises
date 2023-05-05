@@ -74,6 +74,9 @@ export class Form {
       this._callbacks[callback].errorCallback(event);
       return;
     }
+    if (result === true) {
+      event.target.submit();
+    }
   }
 
   _onFormInput(item) {

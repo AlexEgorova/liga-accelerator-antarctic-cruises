@@ -1,12 +1,10 @@
 .header {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   color: $color-alice-blue;
   background-color: $color-tangaroa;
   background-image: image-set(
-    url("../../img/bg-img/bg-header-desc.jpg") 1x,
-    url("../../img/bg-img/bg-header-desc@2x.jpg") 2x
+    url("../../img/bg-img/bg-header-desc.webp") 1x,
+    url("../../img/bg-img/bg-header-desc.jpg") 1x
   );
   background-repeat: no-repeat;
   background-position: center;
@@ -15,35 +13,35 @@
 
   @include retina {
     background-image: image-set(
-      url("../../img/bg-img/bg-header-desc.webp") 1x,
-      url("../../img/bg-img/bg-header-desc@2x.webp") 2x
+      url("../../img/bg-img/bg-header-desc@2x.webp") 2x,
+      url("../../img/bg-img/bg-header-desc@2x.jpg") 2x
     );
   }
 
   @include vp-1023 {
     background-image: image-set(
-      url("../../img/bg-img/bg-header-tabl.jpg") 1x,
-      url("../../img/bg-img/bg-header-tabl@2x.jpg") 2x
+      url("../../img/bg-img/bg-header-tabl.webp") 1x,
+      url("../../img/bg-img/bg-header-tabl.jpg") 1x
     );
 
     @include retina {
       background-image: image-set(
-        url("../../img/bg-img/bg-header-tabl.webp") 1x,
-        url("../../img/bg-img/bg-header-tabl@2x.webp") 2x
+        url("../../img/bg-img/bg-header-tabl@2x.webp") 2x,
+        url("../../img/bg-img/bg-header-tabl@2x.jpg") 2x
       );
     }
   }
 
   @include vp-767 {
     background-image: image-set(
-      url("../../img/bg-img/bg-header-mob.jpg") 1x,
-      url("../../img/bg-img/bg-header-mob@2x.jpg") 2x
+      url("../../img/bg-img/bg-header-mob.webp") 1x,
+      url("../../img/bg-img/bg-header-mob.jpg") 1x
     );
 
     @include retina {
       background-image: image-set(
-        url("../../img/bg-img/bg-header-mob.webp") 1x,
-        url("../../img/bg-img/bg-header-mob@2x.webp") 2x
+        url("../../img/bg-img/bg-header-mob@2x.webp") 2x,
+        url("../../img/bg-img/bg-header-mob@2x.jpg") 2x
       );
     }
   }
@@ -73,7 +71,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     @include vp-1023 {
       font-size: 18px;
@@ -87,7 +85,7 @@
   }
 }
 
-.header__wrapper {
+.header__container {
   min-height: 650px;
 
   @include vp-1023 {
@@ -99,47 +97,103 @@
   }
 }
 
+.header__wrapper {
+  padding: 35px 0;
+
+  @include vp-1023 {
+    padding: 28px 0;
+  }
+
+  @include vp-767 {
+    position: relative;
+    padding: 20px 0;
+  }
+}
+
 .header__nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 35px;
-
-  @include vp-1023 {
-    padding-top: 29px;
-  }
 }
 
-.header__nav button {
+.header__burger {
   display: none;
 
   @include vp-767 {
+    padding: 0;
     display: block;
-  }
-}
+    width: 24px;
+    height: 15px;
+    border: none;
+    background-color: transparent;
+    background-image: url("../../img/svg/icon-burger-close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
 
-.header__site-menu a {
-  font-size: $fz-default;
-  line-height: 20px;
-
-  @include vp-1023 {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  @include vp-767 {
-    font-size: 18px;
-    line-height: 22px;
-    color: $color-tangaroa;
+    @include hover-focus {
+      opacity: 0.5;
+    }
   }
 }
 
 .header__content {
   padding-left: 7vw;
-  padding-top: 192px;
+  padding-top: 155px;
 
   @include vp-1023 {
     padding-left: 0;
-    padding-top: 215px;
+    padding-top: 185px;
+  }
+
+  @include vp-767 {
+    padding-top: 110px;
+  }
+}
+
+.header__wrapper.is-open {
+  .header__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 285px;
+    min-height: 568px;
+    display: grid;
+    grid-template-columns: 1fr 35px;
+    grid-template-rows: 25px 1fr;
+    row-gap: 40px;
+    background-color: $color-alice-blue;
+    padding-top: 20px;
+    padding-left: 15px;
+    align-items: flex-start;
+  }
+
+  .header__logo svg {
+    fill: $color-tangaroa;
+  }
+
+  .header__burger {
+    background-image: url("../../img/svg/icon-burger-open.svg");
+    z-index: 10;
+    margin-top: 3px;
+  }
+
+  .header__site-menu {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    row-gap: 26px;
+    align-items: start;
+
+    a {
+      color: $color-tangaroa;
+
+      @include hover-focus {
+        opacity: 0.5;
+      }
+    }
   }
 }

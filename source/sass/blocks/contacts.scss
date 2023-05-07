@@ -1,96 +1,84 @@
 .contacts {
-  iframe {
-    @include vp-1023 {
-      width: 324px;
-      height: 335px;
-    }
+  padding: 120px 0;
 
-    @include vp-767 {
-      width: 100%;
-      min-width: 290px;
-      height: 316px;
-      order: 2;
-    }
+  @include vp-1023 {
+    padding: 100px 0;
   }
 
-  h3 {
-    margin: 0;
-    margin-top: 0;
-    margin-bottom: 28px;
-    color: $color-tangaroa;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 150%;
-  }
-
-  a,
-  address {
-    text-decoration: none;
-    display: grid;
-    grid-template-columns: 18px 1fr;
-    column-gap: 10px;
-    margin: 0;
-    margin-bottom: 22px;
-    padding: 0;
-    color: $color-tangaroa;
-    font-style: normal;
-    font-weight: 400;
-    font-size: $fz-default;
-    line-height: 150%;
-    cursor: pointer;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include hover-focus {
-      opacity: 0.5;
-    }
-
-    @include active {
-      fill: $color-quartz;
-    }
-  }
-
-  svg {
-    fill: $color-tangaroa;
-    margin-right: 10px;
-
-    @include hover-focus {
-      opacity: 0.5;
-    }
-
-    @include active {
-      fill: $color-quartz;
-    }
+  @include vp-767 {
+    padding: 57px 0 65px;
   }
 }
 
-.contacts__wrapper {
+.contacts__container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 99px;
-  min-height: 546px;
+  grid-template-columns: minmax(auto, 560px) 1fr;
+  gap: 30px 100px;
   align-items: center;
 
   @include vp-1023 {
-    min-height: 535px;
-    column-gap: 30px;
+    grid-template-columns: minmax(auto, 324px) 1fr;
+    gap: 30px;
   }
 
   @include vp-767 {
-    display: flex;
-    flex-direction: column;
-    min-height: 703px;
-    padding: 59px 0;
+    grid-template-columns: 1fr;
   }
 }
 
-.contacts__content {
-  display: flex;
-  flex-direction: column;
+.contacts p {
+  margin: 0 0 34px;
+  color: $color-tangaroa;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+
+
+  @include vp-1023 {
+    margin-bottom: 28px;
+  }
 
   @include vp-767 {
     margin-bottom: 30px;
+  }
+}
+
+.contacts__item {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  width: fit-content;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fz-default;
+  line-height: 150%;
+
+  & + & {
+    margin-top: 22px;
+  }
+}
+
+.contacts__item a {
+  text-decoration: none;
+  cursor: pointer;
+
+  @include hover-focus {
+    opacity: 0.5;
+  }
+
+  @include active {
+    color: $color-quartz;
+  }
+}
+
+.contacts__item svg {
+  fill: currentColor;
+
+  @include vp-1023 {
+    margin-top: 4px;
+  }
+
+  @include vp-767 {
+    margin-top: 0;
   }
 }

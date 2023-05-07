@@ -1,12 +1,9 @@
 .container {
   width: 100%;
-  max-width: 1366px;
+  min-width: 320px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(45px, 7.5vw, 103px);
-
-  // @include vp-1439 {
-  //   padding: 0 32px;
-  // }
+  padding: 0 20px;
 
   @include vp-1023 {
     padding: 0 45px;

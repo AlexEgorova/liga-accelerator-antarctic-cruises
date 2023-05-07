@@ -8,8 +8,8 @@ html,
 body {
   margin: 0;
   padding: 0;
+  min-width: 320px;
   min-height: 100vh;
-  scroll-behavior: smooth;
 }
 
 html {
@@ -22,6 +22,7 @@ html {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
   // оптимизация выравнивания шрифта относительно центра строки
   text-rendering: optimizeLegibility;
   // если по прежнему есть проблемы с выравниванием
@@ -112,7 +113,8 @@ input[type="number"] {
 // ios button \ inputs reset
 select,
 textarea,
-input:matches([type="email"],
+input:matches(
+  [type="email"],
   [type="number"],
   [type="password"],
   [type="search"],

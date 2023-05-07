@@ -1,7 +1,9 @@
-.logo svg {
-  fill: $color-alice-blue;
+.logo {
+  display: block;
   width: 70px;
   height: 38px;
+  color: $color-alice-blue;
+  fill: currentColor;
 
   @include hover-focus {
     opacity: 0.7;
@@ -15,9 +17,9 @@
     width: 38px;
     height: 20px;
   }
+}
 
-  @include vp-767 {
-    width: 42px;
-    height: 22px;
-  }
+.logo svg {
+  width: 100%;
+  height: 100%;
 }

@@ -1,7 +1,5 @@
 .booking {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  padding: 49px 0 51px;
   color: $color-tangaroa;
   background-color: $color-alice-blue;
   background-image: image-set(
@@ -20,6 +18,7 @@
   }
 
   @include vp-1023 {
+    padding: 88px 0 100px;
     background-image: image-set(
       url("../../img/bg-img/bg-booking-tabl.webp") 1x,
       url("../../img/bg-img/bg-booking-tabl.jpg") 1x,
@@ -34,7 +33,7 @@
   }
 
   @include vp-767 {
-    padding-top: 60px;
+    padding: 59px 0 65px;
     background-image: image-set(
       url("../../img/bg-img/bg-booking-mob.webp") 1x,
       url("../../img/bg-img/bg-booking-mob.jpg") 1x
@@ -47,76 +46,78 @@
       );
     }
   }
+}
 
-  h2 {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 150%;
-    margin: 0;
-    margin-top: 15px;
-    margin-bottom: 8px;
+.booking__container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
 
-    @include vp-1023 {
-      font-size: 34px;
-      margin-bottom: 5px;
-    }
-
-    @include vp-767 {
-      font-size: 24px;
-      line-height: 130%;
-      margin: 0 auto;
-      margin-bottom: 15px;
-      text-align: center;
-    }
+  @include vp-1023 {
+    display: block;
   }
 
-  p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 150%;
-    margin: 0;
-    max-width: 352px;
-
-    @include vp-1023 {
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    @include vp-767 {
-      font-size: $fz-default;
-      line-height: 140%;
-      max-width: 255px;
-    }
+  @media (min-width: 1023px) {
+    padding: 0 80px;
   }
 }
 
-.booking__wrapper {
-  display: grid;
-  grid-template-columns: 1fr 403px;
-  padding: 5px 60px 30px;
-  align-items: center;
-  min-height: 555px;
+.booking__content {
+  text-align: left;
 
   @include vp-1023 {
-    display: flex;
-    flex-direction: column;
-    padding: 75px 128px 100px;
+    padding-bottom: 52px;
+    text-align: center;
   }
 
   @include vp-767 {
-    padding: 0;
+    padding-bottom: 32px;
+  }
+}
+
+.booking h2 {
+  margin: 0 0 7px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 150%;
+  text-align: left;
+
+  @include vp-1023 {
+    margin-bottom: 5px;
+    font-size: 34px;
+    text-align: center;
+  }
+
+  @include vp-767 {
+    margin-bottom: 14px;
+    font-size: 24px;
+    line-height: 130%;
+  }
+}
+
+.booking p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  margin: 0;
+  max-width: 355px;
+
+  @include vp-1023 {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  @include vp-767 {
+    font-size: $fz-default;
+    line-height: 140%;
+    max-width: 270px;
   }
 }
 
 .booking__form {
-  margin-top: 25px;
+  max-width: 403px;
 
   @include vp-1023 {
-    margin-top: 50px;
-  }
-
-  @include vp-767 {
-    margin-top: 30px;
-    margin-bottom: 65px;
+    margin: 0 auto;
   }
 }

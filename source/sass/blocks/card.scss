@@ -1,126 +1,112 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   position: relative;
-  text-decoration: none;
-  min-width: 260px;
-  max-height: 386px;
-  margin: 0;
   color: $color-alice-blue;
   background: linear-gradient(180deg, rgba(1, 28, 64, 0) 50%, $color-tangaroa 100%);
   cursor: pointer;
+}
 
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
-  h3 {
-    position: absolute;
-    left: 20px;
-    bottom: 0;
-    margin-left: 5px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 150%;
-  }
-
-  @include hover-focus {
-    display: block;
-    width: auto;
-    max-height: 386px;
-    justify-content: flex-start;
-    background: $color-tangaroa;
-    box-shadow: 0 4px 35px $color-tangaroa-015;
-
-    h3 {
-      display: none;
-    }
-
-    img {
-      display: none;
-    }
-
-    .card__content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 25px;
-      padding-bottom: 35px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-
-    p {
-      margin: 0;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 150%;
-    }
-
-    dl {
-      margin: 0;
-      margin-top: 8px;
-      padding: 0;
-      overflow-y: auto;
-    }
-
-    dt {
-      font-family: $ff-default;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 140%;
-    }
-
-    dd {
-      margin: 0;
-      margin-bottom: 15px;
-      font-family: $ff-default;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 140%;
-    }
-
-    button {
-      min-width: 100%;
-      min-height: fit-content;
-      padding: 8px 10px 6px;
-      background-color: $color-alice-blue;
-      color: $color-tangaroa;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 150%;
-      text-align: center;
-      border: none;
-
-      @include hover-focus {
-        opacity: 0.5;
-      }
-    }
-  }
+.card h3 {
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  left: 0;
+  margin: 0 30px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
 
   @include vp-1023 {
-    min-width: 309px;
+    bottom: 27px;
+    margin: 0 35px;
   }
 
   @include vp-767 {
-    min-width: 270px;
+    bottom: 17px;
+    margin: 0 25px;
   }
 }
 
-.card__wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card__content {
+  position: absolute;
+  z-index: -1;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-content: start;
+  padding: 28px 25px 34px;
+  color: $color-quartz;
+  background-color: $color-tangaroa;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  inset: 0;
+  pointer-events: none;
+
+  @include vp-1023 {
+    padding: 28px 35px 34px;
+  }
+
+  @include vp-767 {
+    padding: 28px 25px 34px;
+  }
 }
 
-.card__content {
-  display: none;
+.card p {
+  margin: 0 0 14px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+
+  @include vp-1023 {
+    margin-bottom: 16px;
+  }
+}
+
+.card dl {
+  margin: 0 0 4px;
+  overflow: auto;
+  font-family: $ff-default;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  scrollbar-color: $color-default-white $color-gray;
+  scrollbar-width: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-gray;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-default-white;
+    border: 2px solid $color-gray;
+    border-radius: 20px;
+  }
+}
+
+.card dt {
+  font-weight: 500;
+}
+
+.card dd {
+  margin: 0 0 13px;
+}
+
+.card:focus-within .card__content,
+.card:hover .card__content {
+  z-index: 1;
+  box-shadow: 0 4px 35px $color-tangaroa-015;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }

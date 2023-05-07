@@ -1,6 +1,8 @@
 .header {
+  position: relative;
   width: 100%;
   color: $color-alice-blue;
+
   background-color: $color-tangaroa;
   background-image: image-set(
     url("../../img/bg-img/bg-header-desc.webp") 1x,
@@ -9,7 +11,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  // box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   @include retina {
     background-image: image-set(
@@ -45,43 +46,44 @@
       );
     }
   }
+}
 
-  h1 {
-    margin: 0;
-    margin-bottom: 10px;
-    font-weight: 700;
-    font-size: 54px;
-    line-height: 66px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-    @include vp-1023 {
-      font-size: 50px;
-      line-height: 61px;
-      text-shadow: none;
-    }
+.header h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 66px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-    @include vp-767 {
-      font-size: 36px;
-      line-height: 45px;
-    }
+  @include vp-1023 {
+    font-size: 50px;
+    line-height: 61px;
+    text-shadow: none;
   }
 
-  p {
-    margin: 0;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  @include vp-767 {
+    font-size: 36px;
+    line-height: 45px;
+  }
+}
 
-    @include vp-1023 {
-      font-size: 18px;
-      line-height: 22px;
-      text-shadow: none;
-    }
+.header p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-    @include vp-767 {
-      font-size: 16px;
-    }
+  @include vp-1023 {
+    font-size: 18px;
+    line-height: 22px;
+    text-shadow: none;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
   }
 }
 
@@ -98,15 +100,18 @@
 }
 
 .header__wrapper {
-  padding: 35px 0;
+  padding: 33px 0;
 
   @include vp-1023 {
     padding: 28px 0;
   }
 
   @include vp-767 {
-    position: relative;
-    padding: 20px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 21px 16px;
   }
 }
 
@@ -120,80 +125,194 @@
   display: none;
 
   @include vp-767 {
-    padding: 0;
+    position: relative;
+
     display: block;
     width: 24px;
-    height: 15px;
+    height: 14px;
+    padding: 0;
+
     border: none;
     background-color: transparent;
-    background-image: url("../../img/svg/icon-burger-close.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    border-top: 2px solid $color-alice-blue;
     cursor: pointer;
 
     @include hover-focus {
       opacity: 0.5;
     }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 24px;
+      height: 2px;
+      background-color: $color-alice-blue;
+      transform: translateX(-50%);
+    }
+
+    &::before {
+      bottom: 0;
+    }
+
+    &::after {
+      top: calc(50% - 1px);
+      transform: translate(-50%, -50%);
+    }
   }
 }
 
 .header__content {
-  padding-left: 7vw;
-  padding-top: 155px;
+  padding: 166px 95px;
 
   @include vp-1023 {
-    padding-left: 0;
-    padding-top: 185px;
+    padding: 188px 0;
   }
 
   @include vp-767 {
-    padding-top: 110px;
+    padding: 176px 0;
   }
 }
 
-.header__wrapper.is-open {
-  .header__nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 285px;
-    min-height: 568px;
-    display: grid;
-    grid-template-columns: 1fr 35px;
-    grid-template-rows: 25px 1fr;
-    row-gap: 40px;
-    background-color: $color-alice-blue;
-    padding-top: 20px;
-    padding-left: 15px;
-    align-items: flex-start;
-  }
+// .header__wrapper.is-open {
+//   .header__nav {
+//     position: fixed;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     width: 285px;
+//     min-height: 568px;
+//     display: grid;
+//     grid-template-columns: 1fr 35px;
+//     grid-template-rows: 25px 1fr;
+//     row-gap: 40px;
+//     background-color: $color-alice-blue;
+//     padding-top: 20px;
+//     padding-left: 15px;
+//     align-items: flex-start;
+//   }
 
-  .header__logo svg {
+//   .header__logo svg {
+//     fill: $color-tangaroa;
+//   }
+
+//   .header__burger {
+//     background-image: url("../../img/svg/icon-burger-open.svg");
+//     z-index: 10;
+//     margin-top: 3px;
+//   }
+
+//   .header__site-menu {
+//     grid-column: 1 / -1;
+//     grid-row: 2 / 3;
+//     display: flex;
+//     flex-direction: column;
+//     row-gap: 26px;
+//     align-items: start;
+
+//     a {
+//       color: $color-tangaroa;
+
+//       @include hover-focus {
+//         opacity: 0.5;
+//       }
+//     }
+//   }
+// }
+
+.is-open {
+  @include vp-767 {
+    min-height: 100vh;
+    padding: 0 0 0 35px;
+    background-color: $color-prussian-blue-05;
+    inset: 0;
+  }
+}
+
+.is-open .header__nav,
+.no-js .header__nav {
+  @include vp-767 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-content: start;
+    height: 100%;
+    gap: 42px 10px;
+    background-color: $color-alice-blue;
+    padding: 21px 15px;
+  }
+}
+
+.is-open .header__logo svg,
+.no-js .header__logo svg {
+  @include vp-767 {
     fill: $color-tangaroa;
   }
+}
 
-  .header__burger {
-    background-image: url("../../img/svg/icon-burger-open.svg");
-    z-index: 10;
-    margin-top: 3px;
+.is-open .header__burger {
+  @include vp-767 {
+    border-color: transparent;
+    justify-self: end;
   }
 
-  .header__site-menu {
-    grid-column: 1 / -1;
-    grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    row-gap: 26px;
-    align-items: start;
-
-    a {
-      color: $color-tangaroa;
-
-      @include hover-focus {
-        opacity: 0.5;
-      }
+  &::before,
+  &::after {
+    @include vp-767 {
+      top: 50%;
+      right: 5px;
+      left: 8px;
+      width: 20px;
+      background-color: $color-tangaroa;
     }
   }
+
+  &::before {
+    @include vp-767 {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &::after {
+    @include vp-767 {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.is-open .header__site-menu,
+.no-js .header__site-menu {
+  @include vp-767 {
+    display: block;
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    overflow: auto;
+    justify-self: start;
+  }
+}
+
+.is-open .header__site-menu a {
+  @include vp-767 {
+    color: $color-tangaroa;
+  }
+}
+
+.is-open li:not(:last-child) {
+  @include vp-767 {
+    margin-bottom: 27px;
+  }
+}
+
+.no-js .header__nav {
+  @include vp-767 {
+    position: static;
+    margin: 0 -15px;
+  }
+}
+
+.no-js .header__burger {
+  display: none;
 }

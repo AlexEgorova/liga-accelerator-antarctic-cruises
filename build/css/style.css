@@ -1505,6 +1505,9 @@ button,
   -ms-grid-columns: 1fr auto;
   grid-template-columns: 1fr auto;
   gap: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media (max-width: 1023px) {
   .booking__container {
@@ -1882,6 +1885,17 @@ button,
 }
 .contacts__item + .contacts__item {
   margin-top: 22px;
+}
+@media (hover: hover) {
+  .contacts__item:hover:not(.focus-visible) {
+    opacity: 0.5;
+  }
+}
+.contacts__item.focus-visible:focus {
+  opacity: 0.5;
+}
+.contacts__item.focus-visible:active {
+  color: #d8d8d9;
 }
 
 .contacts__item a {

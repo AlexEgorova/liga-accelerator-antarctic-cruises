@@ -52,6 +52,7 @@
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 30px;
+  align-items: center;
 
   @include vp-1023 {
     display: block;

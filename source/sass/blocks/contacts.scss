@@ -48,6 +48,7 @@
   grid-template-columns: 18px 1fr;
   gap: 10px;
   width: fit-content;
+  color: $color-tangaroa;
   font-style: normal;
   font-weight: 400;
   font-size: $fz-default;
@@ -56,19 +57,11 @@
   & + & {
     margin-top: 22px;
   }
-
-  @include hover-focus {
-    opacity: 0.5;
-  }
-
-  @include active {
-    color: $color-quartz;
-  }
 }
 
-.contacts__item a {
+a.contacts__item {
   text-decoration: none;
-  cursor: pointer;
+  // cursor: pointer;
 
   @include hover-focus {
     opacity: 0.5;

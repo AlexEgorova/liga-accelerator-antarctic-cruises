@@ -3,8 +3,8 @@
   color: $color-tangaroa;
   background-color: $color-alice-blue;
   background-image: image-set(
-    url("../../img/bg-img/bg-booking-desk.webp") 1x,
-    url("../../img/bg-img/bg-booking-desk.jpg") 1x
+    url("../img/bg-img/bg-booking-desk.webp") 1x,
+    url("../img/bg-img/bg-booking-desk.jpg") 1x
   );
   background-repeat: no-repeat;
   background-position: center;
@@ -12,22 +12,22 @@
 
   @include retina {
     background-image: image-set(
-      url("../../img/bg-img/bg-booking-desk@2x.jpg") 2x,
-      url("../../img/bg-img/bg-booking-desk@2x.webp") 2x
+      url("../img/bg-img/bg-booking-desk@2x.jpg") 2x,
+      url("../img/bg-img/bg-booking-desk@2x.webp") 2x
     );
   }
 
   @include vp-1023 {
     padding: 88px 0 100px;
     background-image: image-set(
-      url("../../img/bg-img/bg-booking-tabl.webp") 1x,
-      url("../../img/bg-img/bg-booking-tabl.jpg") 1x,
+      url("../img/bg-img/bg-booking-tabl.webp") 1x,
+      url("../img/bg-img/bg-booking-tabl.jpg") 1x,
     );
 
     @include retina {
       background-image: image-set(
-        url("../../img/bg-img/bg-booking-tabl@2x.webp") 2x,
-        url("../../img/bg-img/bg-booking-tabl@2x.jpg") 2x
+        url("../img/bg-img/bg-booking-tabl@2x.webp") 2x,
+        url("../img/bg-img/bg-booking-tabl@2x.jpg") 2x
       );
     }
   }
@@ -35,14 +35,14 @@
   @include vp-767 {
     padding: 59px 0 65px;
     background-image: image-set(
-      url("../../img/bg-img/bg-booking-mob.webp") 1x,
-      url("../../img/bg-img/bg-booking-mob.jpg") 1x
+      url("../img/bg-img/bg-booking-mob.webp") 1x,
+      url("../img/bg-img/bg-booking-mob.jpg") 1x
     );
 
     @include retina {
       background-image: image-set(
-        url("../../img/bg-img/bg-booking-mob@2x.webp") 2x,
-        url("../../img/bg-img/bg-booking-mob@2x.jpg") 2x
+        url("../img/bg-img/bg-booking-mob@2x.webp") 2x,
+        url("../img/bg-img/bg-booking-mob@2x.jpg") 2x
       );
     }
   }

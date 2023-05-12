@@ -3,8 +3,8 @@
   color: $color-tangaroa;
   background-color: $color-quartz;
   background-image: image-set(
-    url("../../img/bg-img/bg-advantages-desk.webp") 1x,
-    url("../../img/bg-img/bg-advantages-desk.jpg") 1x,
+    url("../img/bg-img/bg-advantages-desk.webp") 1x,
+    url("../img/bg-img/bg-advantages-desk.jpg") 1x,
   );
   background-repeat: no-repeat;
   background-position: center;
@@ -12,22 +12,22 @@
 
   @include retina {
     background-image: image-set(
-      url("../../img/bg-img/bg-advantages-desk@2x.webp") 2x,
-      url("../../img/bg-img/bg-advantages-desk@2x.jpg") 2x
+      url("../img/bg-img/bg-advantages-desk@2x.webp") 2x,
+      url("../img/bg-img/bg-advantages-desk@2x.jpg") 2x
     );
   }
 
   @include vp-1023 {
     padding: 90px 0 100px;
     background-image: image-set(
-      url("../../img/bg-img/bg-advantages-tabl.webp") 1x,
-      url("../../img/bg-img/bg-advantages-tabl.jpg") 1x
+      url("../img/bg-img/bg-advantages-tabl.webp") 1x,
+      url("../img/bg-img/bg-advantages-tabl.jpg") 1x
     );
 
     @include retina {
       background-image: image-set(
-        url("../../img/bg-img/bg-advantages-tabl@2x.webp") 2x,
-        url("../../img/bg-img/bg-advantages-tabl@2x.jpg") 2x
+        url("../img/bg-img/bg-advantages-tabl@2x.webp") 2x,
+        url("../img/bg-img/bg-advantages-tabl@2x.jpg") 2x
       );
     }
   }
@@ -35,14 +35,14 @@
   @include vp-767 {
     padding: 57px 0 66px;
     background-image: image-set(
-      url("../../img/bg-img/bg-advantages-mob.webp") 1x,
-      url("../../img/bg-img/bg-advantages-mob.jpg") 1x,
+      url("../img/bg-img/bg-advantages-mob.webp") 1x,
+      url("../img/bg-img/bg-advantages-mob.jpg") 1x,
     );
 
     @include retina {
       background-image: image-set(
-        url("../../img/bg-img/bg-advantages-mob@2x.webp") 2x,
-        url("../../img/bg-img/bg-advantages-mob@2x.jpg") 2x
+        url("../img/bg-img/bg-advantages-mob@2x.webp") 2x,
+        url("../img/bg-img/bg-advantages-mob@2x.jpg") 2x
       );
     }
   }
@@ -151,11 +151,11 @@
   }
 
   &--liner::before {
-    background-image: url("../../img/svg/icon-liner.svg");
+    background-image: url("../img/svg/icon-liner.svg");
   }
 
   &--all-inclusive::before {
-    background-image: url("../../img/svg/icon-all-inclusive.svg");
+    background-image: url("../img/svg/icon-all-inclusive.svg");
 
     @include vp-767 {
       top: 25px;
@@ -164,7 +164,7 @@
   }
 
   &--zodiac::before {
-    background-image: url("../../img/svg/icon-zodiac.svg");
+    background-image: url("../img/svg/icon-zodiac.svg");
 
     @include vp-767 {
       top: 21px;

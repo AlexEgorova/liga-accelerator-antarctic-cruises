@@ -2,33 +2,42 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 403px;
+  min-width: 403px;
   min-height: 455px;
   color: $color-alice-blue;
   font-size: 12px;
   background-color: $color-tangaroa;
   padding: 45px 50px;
-  padding-bottom: 0;
+  padding-bottom: 15px;
   align-items: center;
 
-  h3 {
-    margin: 0;
-    padding: 0;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 150%;
-    margin-bottom: 25px;
-
-    @include vp-767 {
-      line-height: 140%;
-      text-align: center;
-      margin-bottom: 30px;
-    }
+  @include vp-1023 {
+    // min-width: 100%;
+    min-width: 403px;
   }
 
   @include vp-767 {
-    width: 290px;
+    min-width: 100%;
     padding: 35px 30px 40px;
+  }
+}
+
+.form h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  margin-bottom: 27px;
+
+  @include vp-1023 {
+    margin-bottom: 28px;
+  }
+
+  @include vp-767 {
+    line-height: 140%;
+    text-align: center;
+    margin-bottom: 28px;
   }
 }
 
@@ -82,6 +91,8 @@
   cursor: pointer;
 
   @include hover-focus {
+    background-color: $color-alice-blue;
+    color: $color-gray;
     opacity: 0.5;
   }
 
@@ -114,7 +125,7 @@
   line-height: 130%;
   color: $color-alice-blue;
   cursor: pointer;
-  margin-bottom: 33px;
+  margin-bottom: 31px;
 
   & input {
     appearance: none;
@@ -143,6 +154,10 @@
 
   @include hover {
     opacity: 0.3;
+  }
+
+  @include vp-1023 {
+    margin-bottom: 30px;
   }
 
   @include vp-767 {

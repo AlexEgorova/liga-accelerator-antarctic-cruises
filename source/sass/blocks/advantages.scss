@@ -96,7 +96,7 @@
   }
 
   @include vp-767 {
-    max-width: 200px;
+    min-width: 200px;
   }
 }
 
@@ -154,14 +154,23 @@
     background-image: url("../img/svg/icon-liner.svg");
   }
 
-  &--all-inclusive::before {
-    background-image: url("../img/svg/icon-all-inclusive.svg");
+  &--all-inclusive {
+    h3 {
+      @include vp-767 {
+        max-width: 200px;
+      }
+    }
 
-    @include vp-767 {
-      top: 25px;
-      left: 18px;
+    &::before {
+      background-image: url("../img/svg/icon-all-inclusive.svg");
+
+      @include vp-767 {
+        top: 25px;
+        left: 18px;
+      }
     }
   }
+
 
   &--zodiac::before {
     background-image: url("../img/svg/icon-zodiac.svg");

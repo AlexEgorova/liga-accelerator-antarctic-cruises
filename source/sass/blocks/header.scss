@@ -98,6 +98,15 @@
   }
 }
 
+.header__logo svg {
+  min-width: 70px;
+  margin-right: 10px;
+
+  @include vp-1023 {
+    min-width: 38px;
+  }
+}
+
 .header__wrapper {
   padding: 33px 0;
 
